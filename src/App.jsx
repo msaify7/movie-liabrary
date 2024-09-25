@@ -37,10 +37,3 @@ function App() {
 }
 
 export default App;
-
-/* 
-<div>
-        <input type="search" placeholder="Search movies" onChange={e => setSearchTerm(e.target.value)} />
-        <button onClick={(e) => {e.preventDefault()}}>Search</button>
-      </div>
-     <img src={`https://image.tmdb.org/t/p/w500/${count?.results[1].poster_path}`} alt="" /> */
