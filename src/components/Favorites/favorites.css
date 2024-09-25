@@ -1,0 +1,26 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.fav-card {
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fav-card button {
+  font-size: 16px;
+  background-color: gray;
+  border: none;
+  padding: 5px;
+  border-radius: 2%;
+}
+.fav-card button:hover {
+  transform: scale(110%);
+  background-color: gray;
+  color: white;
+}

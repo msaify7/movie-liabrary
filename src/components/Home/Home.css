@@ -1,0 +1,22 @@
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  max-width: 100vw;
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.hero {
+  height: 80px;
+  color: white;
+  text-align: center;
+}

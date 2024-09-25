@@ -1,0 +1,10 @@
+h3 {
+  color: white;
+  text-align: center;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 20px 10px;
+  background-color: rgb(66, 65, 65);
+}

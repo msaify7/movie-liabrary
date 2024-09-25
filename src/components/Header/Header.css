@@ -1,0 +1,31 @@
+.head {
+  display: flex;
+  max-width: 98vw;
+  height: 80px;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  max-width: 220px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  width: 280px;
+  font-size: 18px;
+}
+.head a {
+  color: white;
+}
+.head a:hover {
+  color: grey;
+  transform: scale(110%);
+}
+
+a {
+  text-decoration: none;
+}

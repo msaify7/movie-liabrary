@@ -1,0 +1,28 @@
+.card {
+  width: 250px;
+  height: 440px;
+  margin: 20px;
+  border-radius: 10%;
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 10%;
+}
+
+.card-h2 {
+  color: white;
+  text-align: center;
+  padding: 5px;
+  font-size: 22px;
+}
+
+.card-h4 {
+  color: white;
+  text-align: center;
+  padding: 0px;
+}
+
+.card:hover {
+  transform: scale(110%);
+}
