@@ -20,10 +20,6 @@ const router = createBrowserRouter([
         element: <Search />,
       },
       {
-        path: "popular",
-        element: <Search />,
-      },
-      {
         path: "movies/:type",
         element: <MoviesList />,
       },

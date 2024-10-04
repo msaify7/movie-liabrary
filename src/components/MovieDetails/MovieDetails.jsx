@@ -6,8 +6,8 @@ function MovieDetails() {
   const [movie, setMovie] = useState({});
   const { id } = useParams();
 
-  const poster = `https://image.tmdb.org/t/p/original${movie.poster_path}`;
-  const backdrop = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
+  const poster = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+  const backdrop = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=f5e8526f65c1d8e4d5069dedb065d661`
