@@ -8,6 +8,11 @@
   padding: 0 15px;
 }
 
+.active {
+  color: orange;
+  font-weight: 600;
+}
+
 .nav {
   display: flex;
   gap: 2rem;
@@ -15,17 +20,20 @@
   font-weight: 550;
 }
 
-.head a {
-  color: white;
+.logo a {
+  color: orange;
+  font-size: 26px;
+  font-weight: 600;
 }
 
 .head a:hover {
-  color: grey;
+  color: rgb(255, 197, 90);
   transform: scale(110%);
 }
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 .search {
@@ -72,13 +80,13 @@ a {
     justify-content: space-between;
   }
 
-  .logo {
-    font-size: 12px;
+  .logo a {
+    font-size: 23px;
     padding-left: 20px;
   }
 
   .search input {
-    width: 130px;
+    width: 105px;
   }
 
   .mobile-nav {
@@ -108,5 +116,12 @@ a {
 
   .mobile-nav a {
     font-weight: 600;
+  }
+}
+
+@media (max-width: 576px) {
+  .mobile-nav {
+    left: 2rem;
+    width: unset;
   }
 }

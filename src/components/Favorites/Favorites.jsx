@@ -16,7 +16,6 @@ function Favorites() {
   console.log(movies);
   return (
     <>
-      <h2>Your Favorites</h2>
       <div className="list">
         {movies.map((movie, index) => (
           <div className="fav-card">
