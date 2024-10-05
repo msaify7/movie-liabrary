@@ -1,9 +1,10 @@
 import { useOutletContext } from "react-router-dom";
 import MovieCard from "../MovieCard/MovieCard";
 import "./Home.css";
+import SearchCard from "../SearchCard/SearchCard";
 
 function Home() {
-  const [data] = useOutletContext();
+  const { data } = useOutletContext();
   return (
     <>
       <div className="main">

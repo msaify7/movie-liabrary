@@ -12,8 +12,6 @@ function Favorites() {
 
     movies.push(data);
   }
-
-  console.log(movies);
   return (
     <>
       <div className="list">

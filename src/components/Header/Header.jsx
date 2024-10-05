@@ -28,7 +28,14 @@ function Header(props) {
           type="search"
           placeholder="Type here.."
           value={props.searchTerm}
-          onChange={(e) => props.setSearchTerm(e.target.value)}
+          onChange={(e) => {
+            props.setSearchTerm(e.target.value);
+            if (e.target.value === "") {
+              props.setSearchDrop("searchDisplay");
+            } else {
+              props.setSearchDrop("searchDisplay visible");
+            }
+          }}
         />
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </div>

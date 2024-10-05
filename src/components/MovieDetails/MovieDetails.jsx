@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
+import SearchCard from "../SearchCard/SearchCard";
 import "./MovieDetails.css";
 
 function MovieDetails() {
