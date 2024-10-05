@@ -21,17 +21,20 @@ function App() {
       .then((data) => setData(data.results));
   }, []);
 
+  const handleSearch = () => {
+    if (searchDrop === "searchDisplay visible") {
+      setSearchDrop("searchDisplay");
+    }
+  };
+
   return (
-    <div className="main-app">
+    <div onClick={handleSearch} className="main-app">
       <Header
         searchDrop={searchDrop}
         setSearchDrop={setSearchDrop}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
       />
-      <div className={searchDrop}>
-        <SearchCard searchTerm={searchTerm} />
-      </div>
       <Outlet
         context={{
           data,

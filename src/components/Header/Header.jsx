@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SearchCard from "../SearchCard/SearchCard";
 import {
   faMagnifyingGlass,
   faBars,
@@ -38,7 +39,11 @@ function Header(props) {
           }}
         />
         <FontAwesomeIcon icon={faMagnifyingGlass} />
+        <div className={props.searchDrop}>
+          <SearchCard searchTerm={props.searchTerm} />
+        </div>
       </div>
+
       <div className="nav">
         <NavLink to="/movies/top_rated">Top Rated</NavLink>
         <NavLink to="/movies/upcoming">Upcoming</NavLink>
