@@ -8,16 +8,20 @@
   left: 25%;
   right: 10%;
   height: 0px;
-  overflow: hidden;
+  overflow: scroll;
   height: 280px;
   text-align: left;
   z-index: 10;
 }
 
 .search-item {
+  background-color: rgb(53, 53, 53);
+  margin: 5px;
+  padding: 5px 10px;
   list-style: none;
   font-size: 10px;
   color: white;
+  border-radius: 10px;
 }
 
 .movie-title {
@@ -27,4 +31,19 @@
   .search-display {
     width: unset;
   }
+}
+
+.search-display::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 7px;
+  height: 7px;
+}
+
+.search-display::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.search-display::-webkit-scrollbar-corner {
+  background-color: rgba(0, 0, 0, 0.1);
 }
