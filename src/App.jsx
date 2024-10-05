@@ -27,6 +27,8 @@ function App() {
     }
   };
 
+  console.log(data);
+
   return (
     <div onClick={handleSearch} className="main-app">
       <Header

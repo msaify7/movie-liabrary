@@ -29,8 +29,23 @@ function MovieDetails() {
               <img src={poster} alt="" />
             </div>
             <div className="detail-text">
-              <p>{movie.title}</p>
-              <p>{movie.vote_average}</p>
+              <div className="heading">
+                <div className="movie-name">
+                  <p>{movie.title}</p>
+                </div>
+                <div className="name-details">
+                  <p>{movie.release_date}</p>
+                  <p> Language: {movie.original_language}</p>
+                </div>
+              </div>
+              <div className="rating">
+                <p>Rating:</p>
+                <p>{movie.vote_average}</p>
+              </div>
+              <div className="overview">
+                <h3>Overview</h3>
+                <p>{movie.overview}</p>
+              </div>
               <button onClick={handleSubmt}>Add To Favorites</button>
             </div>
           </div>
