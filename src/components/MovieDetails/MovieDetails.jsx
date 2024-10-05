@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
-import SearchCard from "../SearchCard/SearchCard";
 import "./MovieDetails.css";
 
 function MovieDetails() {
@@ -15,7 +14,7 @@ function MovieDetails() {
     )
       .then((res) => res.json())
       .then((data) => setMovie(data));
-  }, []);
+  }, [id]);
 
   const handleSubmt = () => {
     localStorage.setItem(movie.id, JSON.stringify(movie));
