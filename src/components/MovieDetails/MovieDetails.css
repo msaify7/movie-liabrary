@@ -200,13 +200,13 @@
 }
 
 .movie-detailRightBottom {
-  margin: 2rem 0;
+  margin: 1rem 0;
   flex: 0.8;
 }
 
 .synopsisText {
   font-size: 1.5rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   font-weight: 600;
   display: flex;
   position: relative;
@@ -220,31 +220,50 @@
   position: relative;
   bottom: 120px;
   display: flex;
-  justify-content: space-between;
+  gap: 3rem;
+  align-items: center;
   width: 75%;
+  padding: 20px;
+}
+
+.production {
+  position: relative;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  flex-direction: column;
+  width: 100%;
 }
 
 .movie-heading {
-  font-size: 2.2rem;
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+}
+
+.movie-heading-production {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #000000;
+  margin: 1rem 0 2rem;
 }
 
 .movie-Button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.8rem 2rem;
+  padding: 1rem 1rem;
   border-radius: 20px;
   cursor: pointer;
-  width: 150px;
   color: black;
   font-weight: bold;
+  color: white;
+  background-color: #4f4e4e;
 }
 
-.movie-homeButton {
+.moviehomeButton {
   background-color: rgb(255, 0, 0);
 }
 
-.movie-imdbButton {
+.movieimdbButton {
   background-color: #f3ce13;
 }
 
@@ -253,16 +272,23 @@
 }
 
 .movie-production {
-  width: 85%;
+  width: 95%;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   align-items: flex-end;
-  margin-bottom: 4rem;
+  gap: 2rem;
+}
+
+.company-name {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: black;
+  font-weight: 800;
 }
 
 .movie-productionComapany {
   width: 200px;
-  margin: 2rem;
 }
 
 .productionCompanyImage {
@@ -270,6 +296,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 780px) {
@@ -317,7 +344,7 @@
     color: white;
     display: flex;
     flex-direction: column;
-    margin-top: 5rem;
+    margin-top: 4rem;
   }
 
   .movie-detailRightTop > div {
@@ -346,20 +373,20 @@
 
   .movie-genre {
     padding: 0.3rem;
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: 20px;
     margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
   }
 
   .movie-detailRightBottom {
     position: absolute;
-    top: 22rem;
+    top: 24rem;
     left: 1rem;
   }
 
   .synopsisText {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
     font-weight: 600;
     display: flex;
@@ -368,5 +395,83 @@
   }
   .synopsisText > div:last-of-type {
     margin-left: auto;
+  }
+
+  /*  */
+
+  .movie-links {
+    position: relative;
+    bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 20px 0;
+  }
+
+  .movie-heading {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+  }
+
+  .movie-Button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    color: white;
+    background-color: #313131;
+  }
+
+  .newTab {
+    margin-left: 1.4rem;
+  }
+
+  .movie-production {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .movie-productionComapany {
+    width: 200px;
+    margin: 2rem 1rem 1rem;
+  }
+
+  .productionCompanyImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
+  }
+
+  .production {
+    position: relative;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    background-color: white;
+  }
+
+  .company-name {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+    color: black;
+    font-weight: 800;
   }
 }

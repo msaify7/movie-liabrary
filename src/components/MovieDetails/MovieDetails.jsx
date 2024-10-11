@@ -61,12 +61,12 @@ function MovieDetails() {
           </div>
         </div>
         <div className="movie-links">
-          <div className="movie-heading">Useful Links</div>
+          <div className="movie-heading">Useful Links:</div>
           {movie && movie.homepage && (
             <a href={movie.homepage} target="blank" style={{ textDecoration: "none" }}>
               <p>
-                <span className="moviehomeButton movie_Button">
-                  Homepage <i className="newTab fas fa-external-link-alt"></i>
+                <span className="moviehomeButton movie-Button">
+                  Movie Homepage <i className="newTab fas fa-external-link-alt"></i>
                 </span>
               </p>
             </a>
@@ -74,27 +74,29 @@ function MovieDetails() {
           {movie && movie.imdb_id && (
             <a href={"https://www.imdb.com/title/" + movie.imdb_id} target="blank" style={{ textDecoration: "none" }}>
               <p>
-                <span className="movieimdbButton movie_Button">
+                <span className="movieimdbButton movie-Button">
                   IMDb<i className="newTab fas fa-external-link-alt"></i>
                 </span>
               </p>
             </a>
           )}
         </div>
-        <div className="movie-heading">Production companies</div>
-        <div className="movie-production">
-          {movie &&
-            movie.production_companies &&
-            movie.production_companies.map((company) => (
-              <>
-                {company.logo_path && (
-                  <span className="productionCompanyImage">
-                    <img className="movie-productionComapany" src={"https://image.tmdb.org/t/p/original" + company.logo_path} />
-                    <span>{company.name}</span>
-                  </span>
-                )}
-              </>
-            ))}
+        <div className="production">
+          <div className="movie-heading-production">Production companies</div>
+          <div className="movie-production">
+            {movie &&
+              movie.production_companies &&
+              movie.production_companies.map((company) => (
+                <>
+                  {company.logo_path && (
+                    <span className="productionCompanyImage">
+                      <img className="movie-productionComapany" src={"https://image.tmdb.org/t/p/original" + company.logo_path} />
+                      <span className="company-name">{company.name}</span>
+                    </span>
+                  )}
+                </>
+              ))}
+          </div>
         </div>
       </div>
     </>
