@@ -38,6 +38,9 @@ function Home() {
             </Carousel>
           </div>
         </div>
+        <div className="grid-heading">
+          <h2>Popular</h2>
+        </div>
         <div className="card-grid">
           {data.map((movie, index) => (
             <MovieCard data={movie} key={index} />
