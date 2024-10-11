@@ -6,6 +6,7 @@
   align-items: center;
   margin: 0;
   padding: 0 15px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
 .active {
@@ -22,7 +23,7 @@
 
 .logo a {
   color: orange;
-  font-size: 26px;
+  font-size: 1.8rem;
   font-weight: 600;
 }
 
@@ -82,7 +83,7 @@ a {
   }
 
   .logo a {
-    font-size: 23px;
+    font-size: 1.5rem;
     padding-left: 20px;
   }
 

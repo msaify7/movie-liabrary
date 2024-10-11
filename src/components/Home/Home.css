@@ -7,8 +7,6 @@
 
 .main {
   max-width: 100vw;
-  padding: 20px;
-  margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +14,122 @@
 }
 
 .hero {
-  height: 80px;
-  color: white;
-  text-align: center;
+}
+
+/*  */
+
+.posterImage {
+  height: 600px;
+}
+
+.posterImage > img {
+  margin: auto;
+  display: block;
+  width: 100%;
+}
+
+.posterImage-overlay {
+  position: absolute;
+  padding: 5rem;
+  bottom: 0px;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background-image: linear-gradient(rgb(39, 39, 39, 0), rgb(39, 39, 39, 1));
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.posterImage-overlay:hover {
+  opacity: 1;
+}
+
+.posterImage-title {
+  font-weight: 900;
+  font-size: 4rem;
+  margin-bottom: 0.4rem;
+  text-align: left;
+}
+
+.posterImage-runtime {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.posterImage-rating {
+  margin-left: 3rem;
+}
+
+.posterImage-description {
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  text-align: left;
+  width: 50%;
+}
+
+@media (max-width: 970px) {
+  .posterImage {
+    height: auto;
+  }
+
+  .posterImage > img {
+    margin: auto;
+    display: block;
+    width: 100%;
+  }
+
+  .posterImage-overlay {
+    position: absolute;
+    padding: 0.5rem 2rem;
+    bottom: 0px;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-image: linear-gradient(rgb(39, 39, 39, 0), rgb(39, 39, 39, 1));
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+
+  .posterImage-overlay:hover {
+    opacity: 1;
+  }
+
+  .posterImage-title {
+    font-weight: 900;
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+    text-align: left;
+  }
+
+  .posterImage-runtime {
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .posterImage-rating {
+    margin-left: 1rem;
+  }
+
+  .posterImage-description {
+    font-style: italic;
+    font-size: 0.8rem;
+    display: flex;
+    text-align: left;
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+
+  .poster .carousel .control-dots .dot {
+    width: 3px;
+    height: 3px;
+    margin: 0 3px;
+  }
 }

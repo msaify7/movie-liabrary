@@ -2,12 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SearchCard from "../SearchCard/SearchCard";
-import {
-  faMagnifyingGlass,
-  faBars,
-  faXmark,
-  faBarcode,
-} from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 function Header(props) {
