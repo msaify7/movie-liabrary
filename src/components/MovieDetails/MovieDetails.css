@@ -299,6 +299,19 @@
   margin-bottom: 2rem;
 }
 
+.favorite {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  font-weight: 500;
+  padding: 10px;
+  cursor: pointer;
+  border: 2px solid orange;
+}
+.favorite:hover {
+  background-color: #313131;
+  color: white;
+}
 @media (max-width: 780px) {
   .movie-intro {
     width: 100%;
@@ -326,7 +339,7 @@
     width: 90%;
     display: flex;
     position: relative;
-    bottom: 235px;
+    bottom: 200px;
   }
 
   .movie-detailLeft {
@@ -354,8 +367,8 @@
 
   .movie-name {
     position: absolute;
-    top: 10px;
-    left: 20px;
+    top: -0.8rem;
+    left: 10px;
     font-weight: 600;
     font-size: 2rem;
   }
@@ -401,7 +414,7 @@
 
   .movie-links {
     position: relative;
-    bottom: 150px;
+    bottom: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -473,5 +486,20 @@
     margin: 0 0 1rem 0;
     color: black;
     font-weight: 800;
+  }
+
+  .favorite {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #313131;
+  }
+  .favorite:hover {
+    background-color: #313131;
+    color: white;
+    border: 2px solid orange;
   }
 }

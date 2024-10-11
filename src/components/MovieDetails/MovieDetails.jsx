@@ -53,6 +53,9 @@ function MovieDetails() {
                     ))
                   : ""}
               </div>
+              <button onClick={handleSubmt} className="favorite">
+                Add To Favorite
+              </button>
             </div>
             <div className="movie-detailRightBottom">
               <div className="synopsisText">Synopsis</div>
