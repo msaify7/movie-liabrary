@@ -17,7 +17,7 @@ function Header(props) {
   return (
     <div className="head">
       <div className="logo">
-        <NavLink to="/">Movie Library</NavLink>
+        <NavLink to="/">Movie Liabrary</NavLink>
       </div>
       <div className="search">
         <input
