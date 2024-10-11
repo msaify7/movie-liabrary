@@ -13,7 +13,7 @@ function MovieCard({ data }) {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, 1000);
   }, []);
 
   return (
