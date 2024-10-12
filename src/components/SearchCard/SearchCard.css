@@ -1,25 +1,43 @@
 .search-display {
   width: 370px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(15px);
   border-radius: 12px;
   overflow: scroll;
-  height: 300px;
+  height: 350px;
   text-align: left;
   z-index: 10;
 }
 
 .search-item {
-  background-color: rgb(53, 53, 53);
-  margin: 5px;
-  padding: 5px 10px;
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  /* background-color: rgb(53, 53, 53); */
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 0.8rem;
   list-style: none;
-  font-size: 10px;
-  color: white;
-  border-radius: 10px;
+  font-size: 0.6rem;
+  /* color: white;
+  border-radius: 20px; */
+  z-index: 20;
 }
 
 .movie-title {
+  padding-top: 10px;
+}
+
+.search-item img {
+  width: 60px;
+  border-radius: 10px;
+}
+
+.search-date {
+  display: flex;
+  margin-top: 0.4rem;
+  font-size: 1rem;
+  gap: 1rem;
 }
 
 @media (max-width: 576px) {

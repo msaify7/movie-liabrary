@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./SearchCard.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 function SearchCard(props) {
   const [sdata, setSdata] = useState([]);
+  const poster = `https://image.tmdb.org/t/p/w500`;
 
   useEffect(() => {
     fetch(
@@ -19,7 +22,17 @@ function SearchCard(props) {
           {sdata.map((movie, index) => (
             <Link to={`/movie/${movie.id}`}>
               <li className="search-item" key={index}>
-                <h1 className="movie-title">{movie.title}</h1>
+                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
+                <div className="search-details">
+                  <h1 className="movie-title">{movie.title}</h1>
+                  <div className="search-date">
+                    <p>{movie.release_date.slice(0, 4)}</p>
+                    <p>
+                      {movie.vote_average}
+                      <FontAwesomeIcon icon={faStar} />
+                    </p>
+                  </div>
+                </div>
               </li>
             </Link>
           ))}
