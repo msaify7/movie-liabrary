@@ -14,6 +14,7 @@ function MovieDetails() {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=f5e8526f65c1d8e4d5069dedb065d661`)
       .then((res) => res.json())
       .then((data) => setMovie(data));
+    window.scrollTo(0, 0);
   }, [id]);
 
   const handleSubmt = () => {
