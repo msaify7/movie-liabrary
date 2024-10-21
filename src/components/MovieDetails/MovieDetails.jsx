@@ -45,12 +45,10 @@ function MovieDetails() {
               <div className="movie-releaseDate">{movie ? "Release date: " + movie.release_date : ""}</div>
               <div className="movie-genres">
                 {movie && movie.genres
-                  ? movie.genres.map((genre) => (
-                      <>
-                        <span className="movie-genre" id={genre.id}>
-                          {genre.name}
-                        </span>
-                      </>
+                  ? movie.genres.map((genre, index) => (
+                      <span className="movie-genre" id={genre.id} key={index}>
+                        {genre.name}
+                      </span>
                     ))
                   : ""}
               </div>

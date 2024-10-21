@@ -7,8 +7,7 @@ import SearchCard from "./components/SearchCard/SearchCard";
 
 function App() {
   const Search_Api = `https://api.themoviedb.org/3/search/movie?query=${"searchTerm"}&include_adult=false&language=en-US&page=1&api_key=f5e8526f65c1d8e4d5069dedb065d661`;
-  const Popular_Api =
-    "https://api.themoviedb.org/3/movie/popular?api_key=f5e8526f65c1d8e4d5069dedb065d661&language=en-US";
+  const Popular_Api = "https://api.themoviedb.org/3/movie/popular?api_key=f5e8526f65c1d8e4d5069dedb065d661&language=en-US";
 
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,16 +26,9 @@ function App() {
     }
   };
 
-  console.log(data);
-
   return (
     <div onClick={handleSearch} className="main-app">
-      <Header
-        searchDrop={searchDrop}
-        setSearchDrop={setSearchDrop}
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-      />
+      <Header searchDrop={searchDrop} setSearchDrop={setSearchDrop} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <Outlet
         context={{
           data,

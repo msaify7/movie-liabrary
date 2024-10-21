@@ -5,6 +5,7 @@ import Search from "./components/Search/Search";
 import MoviesList from "./components/MoviesList/MoviesList";
 import MovieDetails from "./components/MovieDetails/MovieDetails";
 import Favorites from "./components/Favorites/Favorites";
+import MoodToGenre from "./components/MoodToGenre/MoodToGenre";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "favorites",
         element: <Favorites />,
+      },
+      {
+        path: "rec",
+        element: <MoodToGenre />,
       },
     ],
   },
