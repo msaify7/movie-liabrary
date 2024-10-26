@@ -133,11 +133,11 @@ function MoodToGenre() {
 
   return (
     <div className="mood-main">
-      <div className="moodHeading">{currMood != "" ? <h3>Feeling {currMood}</h3> : <h3>Choose A Mood</h3>}</div>
+      <div className="moodHeading">{currMood === "" ? <h3>Choose A Mood</h3> : ""}</div>
       <div className="selectmoodsection">
         {mood != "" ? (
           <div className="mood-box">
-            <span className="changemoodheading">Edit Mood:</span>
+            <span className="changemoodheading">Feeling:</span>
             <select className="selectmood" onChange={(e) => (setMood(moodToGenre[e.target.value]), setCurrMood(e.target.value))}>
               {selectedmoods.map((m, index) => (
                 <option className="moodoptions" value={m} key={index}>

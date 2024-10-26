@@ -5,23 +5,26 @@
   align-items: center;
 }
 .moodHeading {
-  width: 300px;
-  height: 35px;
   font-size: 1.3rem;
   text-align: center;
   background-color: rgb(85, 84, 84);
   color: white;
   margin: 10px;
-  padding-top: 7px;
   border-radius: 30px;
+}
+
+.moodHeading h3 {
+  padding: 10px 20px;
 }
 
 .selectmoodsection {
 }
 
 .mood-box {
-  margin: 5px 10px;
-  padding: 5px 10px;
+  margin: 0px 15px 10px;
+  padding: 10px 15px;
+  background-color: rgb(73, 72, 72);
+  border-radius: 20px;
 }
 
 .changemoodheading {
@@ -31,12 +34,15 @@
 }
 
 .selectmood {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  font-weight: 600;
   border-radius: 15px;
-  padding: 0 3px;
+  padding: 3px 3px;
+  text-align: center;
   border: none;
   cursor: pointer;
   box-sizing: border-box;
+  color: rgb(73, 72, 72);
 }
 
 .selectmood:hover {
@@ -74,7 +80,7 @@
 }
 
 .mood-button {
-  color: white;
+  color: rgb(73, 72, 72);
   font-weight: 600;
   font-size: 1rem;
   margin: 3px 1px;
@@ -109,6 +115,8 @@
   border: none;
   padding: 5px 10px;
   cursor: pointer;
+  color: rgb(43, 43, 43);
+  font-weight: 600;
 }
 .movie-navigation button:hover {
   border: 2px solid red;
@@ -117,7 +125,7 @@
 }
 .add-buttons button {
   margin: 8px;
-  width: 170px;
+  width: 180px;
   font-size: 1.2rem;
   border: 2px solid orange;
 }
