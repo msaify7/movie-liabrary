@@ -30,7 +30,7 @@ function Home() {
                           <FontAwesomeIcon icon={faStar} />{" "}
                         </span>
                       </div>
-                      <div className="posterImage-description"> {movie ? movie.overview : ""}</div>
+                      <div className="posterImage-description"> {movie ? movie.overview.slice(0, 140) + "..." : ""}</div>
                     </div>
                   </div>
                 </Link>

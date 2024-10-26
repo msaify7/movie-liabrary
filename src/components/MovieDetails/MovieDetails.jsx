@@ -79,7 +79,7 @@ function MovieDetails() {
           <div className="movie-detailRight">
             <div className="movie-detailRightTop">
               <div className="movie-name">{movie ? movie.original_title : ""}</div>
-              <div className="movie-tagline">{movie ? movie.tagline : ""}</div>
+              <div className="movie-tagline">{movie ? movie.tagline.slice(0, 25) + ".." : ""}</div>
               <div className="movie-rating">
                 {movie ? movie.vote_average : ""} <FontAwesomeIcon icon={faStar} />
                 <span className="movie-voteCount">{movie ? "(" + movie.vote_count + ") votes" : ""}</span>
