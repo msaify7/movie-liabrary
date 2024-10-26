@@ -92,20 +92,6 @@ function MoodToGenre() {
     } else return;
   };
 
-  // const handleHide = () => {
-  //   setDisliked((prev) => [...prev, movies[movieIndex].id]);
-  //   setMovieIndex((prev) => prev + 1);
-  // };
-
-  // useEffect(() => {
-  //   setStoredList();
-  // }, [liked, disliked]);
-
-  // const handleWatchlist = () => {
-  //   setLiked((prev) => [...prev, movies[movieIndex].id]);
-  //   setMovieIndex((prev) => prev + 1);
-  // };
-
   const handleHide = () => {
     const updatedDisliked = [...disliked, movies[movieIndex].id];
     setDisliked(updatedDisliked);
@@ -120,6 +106,8 @@ function MoodToGenre() {
     setMovieIndex((prev) => prev + 1);
   };
 
+  const key = import.meta.env;
+
   useEffect(() => {
     if (mood.length === 0) return;
 
@@ -129,9 +117,7 @@ function MoodToGenre() {
       const fetchedMovies = [];
       for (let m of mood) {
         let page = Math.floor(Math.random() * 10) + 1;
-        const res = await fetch(
-          `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${m}&api_key=f5e8526f65c1d8e4d5069dedb065d661`
-        );
+        const res = await fetch(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${m}&api_key=${key.VITE_API_KEY}`);
         const data = await res.json();
         fetchedMovies.push(...data.results);
       }

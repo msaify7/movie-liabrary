@@ -7,11 +7,10 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 function SearchCard(props) {
   const [sdata, setSdata] = useState([]);
   const poster = `https://image.tmdb.org/t/p/w500`;
+  const key = import.meta.env;
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?query=${props.searchTerm}&include_adult=false&language=en-US&page=1&api_key=f5e8526f65c1d8e4d5069dedb065d661`
-    )
+    fetch(`https://api.themoviedb.org/3/search/movie?query=${props.searchTerm}&include_adult=false&language=en-US&page=1&api_key=${key.VITE_API_KEY}`)
       .then((res) => res.json())
       .then((data) => setSdata(data.results));
   }, [props.searchTerm]);

@@ -4,15 +4,14 @@ import "./favorites.css";
 import { useOutletContext } from "react-router-dom";
 
 function Favorites() {
+  const key = import.meta.env;
   const [fav, setFav] = useState([]);
   const [mov, setMov] = useState([]);
   let id = "";
-  const movieApi = `https://api.themoviedb.org/3/movie/${id}?api_key=f5e8526f65c1d8e4d5069dedb065d661`;
-
-  // const { liked, setLiked } = useOutletContext();
+  const movieApi = `https://api.themoviedb.org/3/movie/${id}?api_key=${key.VITE_API_KEY}`;
 
   const fetchMovie = async (i) => {
-    const res = await fetch(`https://api.themoviedb.org/3/movie/${i}?api_key=f5e8526f65c1d8e4d5069dedb065d661`);
+    const res = await fetch(`https://api.themoviedb.org/3/movie/${i}?api_key=${key.VITE_API_KEY}`);
     const data = await res.json();
     return data;
   };
@@ -27,14 +26,6 @@ function Favorites() {
     };
     fetchedMovies();
   }, [mov]);
-
-  // () => {
-  //               let index = mov.indexOf(movie.id);
-  //               console.log(index);
-  //               mov.slice(index, 1);
-  //               localStorage.setItem("likelist", JSON.stringify(mov));
-  //               setFav(mov);
-  //             }
 
   return (
     <>

@@ -5,9 +5,10 @@ import MovieCard from "../MovieCard/MovieCard";
 function MoviesList() {
   const { type } = useParams();
   const [moviesData, setMoviesData] = useState([]);
+  const key = import.meta.env;
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/${type ? type : "popular"}?api_key=f5e8526f65c1d8e4d5069dedb065d661&language=en-US`)
+    fetch(`https://api.themoviedb.org/3/movie/${type ? type : "popular"}?api_key=${key.VITE_API_KEY}&language=en-US`)
       .then((res) => res.json())
       .then((data) => setMoviesData(data.results));
   }, [type]);
