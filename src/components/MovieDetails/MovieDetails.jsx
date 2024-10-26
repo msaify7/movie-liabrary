@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useOutletContext, useParams } from "react-router-dom";
+import { json, useOutletContext, useParams } from "react-router-dom";
 import "./MovieDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 function MovieDetails() {
   const [movie, setMovie] = useState({});
+  const [isfav, setIsfav] = useState();
+  const [isdis, setIsdis] = useState();
   const { id } = useParams();
 
   const poster = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
   const backdrop = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
+
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=f5e8526f65c1d8e4d5069dedb065d661`)
       .then((res) => res.json())
@@ -17,9 +20,49 @@ function MovieDetails() {
     window.scrollTo(0, 0);
   }, [id]);
 
+  useEffect(() => {
+    const liked = localStorage.getItem("likelist");
+    if (!liked) return setIsfav(false);
+    const li = JSON.parse(liked);
+    if (!li.includes(movie.id)) return;
+
+    setIsfav(true);
+  });
+
+  // useEffect(() => {
+  //   const disliked = localStorage.getItem("dislikelist");
+  //   if (!disliked) return;
+  //   const dis = JSON.parse(disliked);
+  //   if (dis.includes(movie.id)) {
+  //     setIsdis(true);
+  //   }
+  // }, []);
+
   const handleSubmt = () => {
-    localStorage.setItem(movie.id, JSON.stringify(movie));
+    const liked = localStorage.getItem("likelist");
+    if (!liked) {
+      let mov = [];
+      mov.push(movie.id);
+      localStorage.setItem("likelist", JSON.stringify(mov));
+      setIsfav(true);
+    }
+    const li = JSON.parse(liked);
+    if (!li.includes(movie.id)) {
+      li.push(movie.id);
+      localStorage.setItem("likelist", JSON.stringify(li));
+      setIsfav(true);
+    } else return;
   };
+
+  const handleRemoveLike = () => {
+    const removelist = localStorage.getItem("likelist");
+    const list = JSON.parse(removelist);
+    const index = list.indexOf(movie.id);
+    list.splice(index, 1);
+    localStorage.setItem("likelist", JSON.stringify(list));
+    setIsfav(false);
+  };
+
   return (
     <>
       <div className="movie">
@@ -52,9 +95,15 @@ function MovieDetails() {
                     ))
                   : ""}
               </div>
-              <button onClick={handleSubmt} className="favorite">
-                Add To Favorite
-              </button>
+              {isfav ? (
+                <button onClick={handleRemoveLike} className="favorite">
+                  Remove From Favorites
+                </button>
+              ) : (
+                <button onClick={handleSubmt} className="favorite">
+                  Add To Favorite
+                </button>
+              )}
             </div>
             <div className="movie-detailRightBottom">
               <div className="synopsisText">Synopsis</div>
@@ -88,15 +137,15 @@ function MovieDetails() {
           <div className="movie-production">
             {movie &&
               movie.production_companies &&
-              movie.production_companies.map((company) => (
-                <>
+              movie.production_companies.map((company, index) => (
+                <div key={index}>
                   {company.logo_path && (
                     <span className="productionCompanyImage">
                       <img className="movie-productionComapany" src={"https://image.tmdb.org/t/p/original" + company.logo_path} />
                       <span className="company-name">{company.name}</span>
                     </span>
                   )}
-                </>
+                </div>
               ))}
           </div>
         </div>

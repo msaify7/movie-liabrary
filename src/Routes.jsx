@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         element: <Favorites />,
       },
       {
-        path: "rec",
+        path: "recommendation",
         element: <MoodToGenre />,
       },
     ],

@@ -13,6 +13,8 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchData, setSearchData] = useState([]);
   const [searchDrop, setSearchDrop] = useState("searchDisplay");
+  const [liked, setLiked] = useState([]);
+  const [disliked, setDisliked] = useState([]);
 
   useEffect(() => {
     fetch(Popular_Api)
@@ -35,6 +37,10 @@ function App() {
           searchTerm,
           searchData,
           setSearchData,
+          liked,
+          setLiked,
+          disliked,
+          setDisliked,
         }}
       />
       <Footer />

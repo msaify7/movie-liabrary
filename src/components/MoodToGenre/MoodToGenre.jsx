@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "../MovieCard/MovieCard";
+import { useOutletContext } from "react-router-dom";
+import "./MoodToGenre.css";
 
 function MoodToGenre() {
   const [movies, setMovies] = useState([]);
   const [mood, setMood] = useState([]);
-  const [liked, setLiked] = useState([]);
-  const [disliked, setDisliked] = useState([]);
+  const [currMood, setCurrMood] = useState("");
+  // const [liked, setLiked] = useState([]);
+  // const [disliked, setDisliked] = useState([]);
   const [movieIndex, setMovieIndex] = useState(0);
 
-  const getStoredList = () => {
-    let likedMovies = localStorage.getItem(likelist);
-    let dislikedMovies = localStorage.getItem(dislikelist);
-    let data1 = dislikedMovies.json();
-    let data = likedMovies.json();
-    setDisliked(data1);
-    setLiked(data);
-  };
+  const { liked, setLiked, disliked, setDisliked } = useOutletContext();
 
-  const setStoredList = () => {
-    localStorage.setItem("likelist", JSON.stringify(liked));
-    localStorage.setItem("dislikelist", JSON.stringify(disliked));
+  const getStoredList = () => {
+    let likedMovies = localStorage.getItem("likelist");
+    let dislikedMovies = localStorage.getItem("dislikelist");
+    let data1 = JSON.parse(dislikedMovies);
+    let data = JSON.parse(likedMovies);
+    setDisliked(data1 ? data1 : []);
+    setLiked(data ? data : []);
   };
 
   const selectedmoods = [
@@ -80,8 +80,50 @@ function MoodToGenre() {
     });
   };
 
+  const handleNext = () => {
+    if (movieIndex < movies.length - 1) {
+      setMovieIndex((prev) => prev + 1);
+    } else return;
+  };
+
+  const handleprev = () => {
+    if (movieIndex > 0) {
+      setMovieIndex((prev) => prev - 1);
+    } else return;
+  };
+
+  // const handleHide = () => {
+  //   setDisliked((prev) => [...prev, movies[movieIndex].id]);
+  //   setMovieIndex((prev) => prev + 1);
+  // };
+
+  // useEffect(() => {
+  //   setStoredList();
+  // }, [liked, disliked]);
+
+  // const handleWatchlist = () => {
+  //   setLiked((prev) => [...prev, movies[movieIndex].id]);
+  //   setMovieIndex((prev) => prev + 1);
+  // };
+
+  const handleHide = () => {
+    const updatedDisliked = [...disliked, movies[movieIndex].id];
+    setDisliked(updatedDisliked);
+    localStorage.setItem("dislikelist", JSON.stringify(updatedDisliked));
+    setMovieIndex((prev) => prev + 1);
+  };
+
+  const handleWatchlist = () => {
+    const updatedLiked = [...liked, movies[movieIndex].id];
+    setLiked(updatedLiked);
+    localStorage.setItem("likelist", JSON.stringify(updatedLiked));
+    setMovieIndex((prev) => prev + 1);
+  };
+
   useEffect(() => {
     if (mood.length === 0) return;
+
+    getStoredList();
 
     const fetchMovies = async () => {
       const fetchedMovies = [];
@@ -104,16 +146,50 @@ function MoodToGenre() {
   }, [mood]);
 
   return (
-    <>
-      <div>
-        {selectedmoods.map((m, index) => (
-          <button onClick={() => setMood(moodToGenre[m])} key={index}>
-            {m}
-          </button>
-        ))}
+    <div className="mood-main">
+      <div className="moodHeading">{currMood != "" ? <h3>Feeling {currMood}</h3> : <h3>Choose A Mood</h3>}</div>
+      <div className="selectmoodsection">
+        {mood != "" ? (
+          <div className="mood-box">
+            <span className="changemoodheading">Edit Mood:</span>
+            <select className="selectmood" onChange={(e) => (setMood(moodToGenre[e.target.value]), setCurrMood(e.target.value))}>
+              {selectedmoods.map((m, index) => (
+                <option className="moodoptions" value={m} key={index}>
+                  {m}
+                </option>
+              ))}
+            </select>
+          </div>
+        ) : (
+          <div className="mood-list">
+            {selectedmoods.map((m, index) => (
+              <div key={index} className="button-main">
+                <button className="mood-button" onClick={() => setMood(moodToGenre[m], setCurrMood(m))}>
+                  {m}
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
-      <div>{movies.length ? <MovieCard data={movies[movieIndex]} /> : <h3>Choose a mood</h3>}</div>
-    </>
+      {movies.length ? (
+        <div className="movie-section-details">
+          <MovieCard data={movies[movieIndex]} />
+          <div className="movie-navigation">
+            <div className="add-buttons">
+              <button onClick={handleWatchlist}>Add To Watchlist</button>
+            </div>
+            <div className="nav-button">
+              <button onClick={handleprev}>Back</button>
+              <button onClick={handleHide}>Hide</button>
+              <button onClick={handleNext}>Next</button>
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+    </div>
   );
 }
 
