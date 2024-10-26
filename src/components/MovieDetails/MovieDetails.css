@@ -336,14 +336,14 @@
 
   .movie-detail {
     align-items: flex-start;
-    width: 90%;
+    width: 95%;
     display: flex;
     position: relative;
     bottom: 200px;
   }
 
   .movie-detailLeft {
-    margin-right: 1.5rem;
+    margin-right: 0.8rem;
     margin-top: 4rem;
   }
 
