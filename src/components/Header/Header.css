@@ -126,6 +126,10 @@ a {
     left: 2rem;
     width: unset;
   }
+
+  .logo a {
+    font-size: 1.2rem;
+  }
 }
 
 .searchDisplay {

@@ -45,14 +45,16 @@ function Header(props) {
         <NavLink to="/favorites">Favorites</NavLink>
         <NavLink to="/recommendation">Recommendation</NavLink>
       </div>
-      <div onClick={handleIcon} className="toggle-btn">
-        <FontAwesomeIcon icon={icon} />
-      </div>
-      <div className={mobileNav}>
-        <NavLink to="/movies/top_rated">Top Rated</NavLink>
-        <NavLink to="/movies/upcoming">Upcoming</NavLink>
-        <NavLink to="/favorites">Favorites</NavLink>
-        <NavLink to="/recommendation">Recommendation</NavLink>
+      <div onClick={handleIcon}>
+        <div className="toggle-btn">
+          <FontAwesomeIcon icon={icon} />
+        </div>
+        <div className={mobileNav}>
+          <NavLink to="/movies/top_rated">Top Rated</NavLink>
+          <NavLink to="/movies/upcoming">Upcoming</NavLink>
+          <NavLink to="/favorites">Favorites</NavLink>
+          <NavLink to="/recommendation">Recommendation</NavLink>
+        </div>
       </div>
     </div>
   );
