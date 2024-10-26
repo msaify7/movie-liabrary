@@ -43,6 +43,7 @@ function Header(props) {
         <NavLink to="/movies/top_rated">Top Rated</NavLink>
         <NavLink to="/movies/upcoming">Upcoming</NavLink>
         <NavLink to="/favorites">Favorites</NavLink>
+        <NavLink to="/recommendation">Recommendation</NavLink>
       </div>
       <div onClick={handleIcon} className="toggle-btn">
         <FontAwesomeIcon icon={icon} />
@@ -51,6 +52,7 @@ function Header(props) {
         <NavLink to="/movies/top_rated">Top Rated</NavLink>
         <NavLink to="/movies/upcoming">Upcoming</NavLink>
         <NavLink to="/favorites">Favorites</NavLink>
+        <NavLink to="/recommendation">Recommendation</NavLink>
       </div>
     </div>
   );

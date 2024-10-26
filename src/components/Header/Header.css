@@ -113,7 +113,7 @@ a {
 
   .mobile-nav.open {
     height: 200px;
-    padding: 20px 0;
+    padding: 20px 10px;
   }
 
   .mobile-nav a {
