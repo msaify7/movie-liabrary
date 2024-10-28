@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { Outlet } from "react-router-dom";
 import SearchCard from "./components/SearchCard/SearchCard";
+import News from "./components/News/News";
 
 function App() {
   const key = import.meta.env;
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <div onClick={handleSearch} className="main-app">
+      <News />
       <Header searchDrop={searchDrop} setSearchDrop={setSearchDrop} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <Outlet
         context={{

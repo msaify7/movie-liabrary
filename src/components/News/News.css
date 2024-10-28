@@ -1,0 +1,29 @@
+.newsblock {
+  height: 50px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(58, 58, 58);
+}
+
+.newsLink {
+  color: orange;
+}
+
+.newword {
+  color: white;
+}
+
+.filtericon {
+  color: white;
+  margin-right: 10px;
+}
+
+@media (max-width: 900px) {
+  .newsblock {
+    font-size: 1rem;
+    height: 35px;
+  }
+}
