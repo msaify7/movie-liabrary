@@ -84,7 +84,6 @@ This project uses **The Movie Database (TMDB) API** to fetch movie data. Below a
 For more details, refer to [TMDB API Documentation](https://developers.themoviedb.org/3/getting-started/introduction).
 
 ## License
-Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 - **GitHub:** https://github.com/msaify7
